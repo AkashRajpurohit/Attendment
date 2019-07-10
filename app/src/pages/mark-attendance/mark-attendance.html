@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar color="primary" text-center hideBackButton="true">
+    <ion-title>Mark Attendance</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="data">
+
+  <ion-list>
+    <ion-grid>
+      <ion-item>
+        <ion-row>
+          <ion-col col-6>
+            <h1>Subject</h1>
+          </ion-col>
+          <ion-col col-6>
+            <h2>{{data.subject}}</h2>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item>
+        <ion-row>
+          <ion-col col-6>
+            <h1>Semester</h1>
+          </ion-col>
+          <ion-col col-6>
+            <h2>{{data.semester}}</h2>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
+    <ion-item>
+      <ion-label floating>Enter Room Number</ion-label>
+      <ion-input type="number" [(ngModel)]="roomNumber"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-label>Start Time</ion-label>
+      <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="startTime"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>End Time</ion-label>
+      <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="endTime"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full large (click)="submit();" color="dark">Submit</button>
+
+</ion-content>

@@ -1,0 +1,78 @@
+<div class="bold-line"></div>
+<div class="container">
+  <div class="window">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="welcome">Attendment</div>
+      <div class="subtitle">
+        New Age Attendance Management solution
+      </div>
+      <form [formGroup]="registerForm" (ngSubmit)="signup()">
+          <div class="input-fields">
+          <input
+            type="number"
+            placeholder="User ID"
+            class="input-line full-width"
+            formControlName="applicationId"
+          />
+          <input type="text" placeholder="Name" class="input-line full-width" formControlName="fname" />
+          <input type="email" placeholder="Email" class="input-line full-width" formControlName="email" />
+          <input type="number" placeholder="Mobile Number" class="input-line full-width" formControlName="mobileNo" />
+          <input type="password" placeholder="Password" class="input-line full-width" formControlName="password" />
+        </div>
+        <div>
+          <button type="submit" class="ghost-round full-width">Create Account</button>
+        </div>
+      </form>
+      <div class="spacing">
+        Already have an account? <span class="highlight" (click)="login();">Login now!</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ion-header>
+
+  <ion-navbar color="primary" text-center hideBackButton="true">
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <img src="../../assets/user.png" />
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Application ID</ion-label>
+      <ion-input type="number" #applicationId></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" #fname></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email" #email></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Mobile Number</ion-label>
+      <ion-input type="number" #mobileNo></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+
+    <button ion-button block color="primary" (click)="signup();">Signup</button>
+
+  </ion-list>
+
+</ion-content>

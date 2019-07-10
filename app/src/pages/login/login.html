@@ -1,0 +1,27 @@
+<div class="bold-line"></div>
+<div class="container">
+  <div class="window">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="welcome">Attendment</div>
+      <div class="subtitle">
+        New Age Attendance Management solution
+      </div>
+      <div class="input-fields">
+        <input
+          type="number"
+          placeholder="User ID"
+          class="input-line full-width"
+          [(ngModel)]="applicationId"
+        />
+        <input type="password" placeholder="Password" class="input-line full-width" [(ngModel)]="password" />
+      </div>
+      <div>
+        <button class="ghost-round full-width" (click)="login();">Login</button>
+      </div>
+      <div class="spacing">
+        Not Registered? <span class="highlight" (click)="signup();">Signup now!</span>
+      </div>
+    </div>
+  </div>
+</div>

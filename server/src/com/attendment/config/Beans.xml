@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+	<property name="username" value="root"></property>
+	<property name="password" value="040916030411"></property>
+	<property name="url" value="jdbc:mysql://localhost:3306/attendment"></property>
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+	</bean>
+	
+	<context:component-scan
+		base-package="com.attendment.model,com.attendment.service,com.attendment.beans,com.attendment.controller,com.attendment.apis">
+	</context:component-scan>
+	<mvc:annotation-driven></mvc:annotation-driven>
+	
+		<bean id="student" class="com.attendment.beans.Student"></bean>
+		<bean id="account" class="com.attendment.model.Account"></bean>
+		<bean id="service" class="com.attendment.service.AttendmentService"></bean>
+		<bean id="logic" class="com.attendment.beans.LogicExecutor"></bean>
+		
+	
+</beans>

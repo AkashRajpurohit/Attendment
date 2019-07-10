@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar color="primary" text-center hideBackButton="true">
+    <ion-title>Student</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list *ngIf="data">
+    <ion-item no-lines text-wrap>
+      <h1>Welcome {{data.fname}} {{data.lname}}</h1>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label floating>Enter Room Number</ion-label>
+      <ion-input type="number" [(ngModel)]="roomNo"></ion-input>
+    </ion-item>
+    <br />
+    <div *ngIf="source">
+      <img src="{{source}}">
+    </div>
+  </ion-list>
+  <ion-fab bottom right>
+    <button ion-fab (click)="scanCode();" color="dark" [disabled]="roomNo.length < 1">
+      <ion-icon name="barcode"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

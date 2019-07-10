@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar color="primary" text-center hideBackButton="true">
+    <ion-title>Student Status</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Enter Room Number</ion-label>
+      <ion-input type="number" [(ngModel)]="roomNo"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item>
+      <button ion-button full large color="secondary" (click)="check();">Check</button>
+    </ion-item>
+
+    <ion-item *ngIf="data">
+      <ion-card>
+        <ion-grid>
+          <ion-item>
+            <ion-row>
+              <ion-col col-4>
+                <h2>Sr No.</h2>
+              </ion-col>
+              <ion-col col-4>
+                <h2>Roll No.</h2>
+              </ion-col>
+              <ion-col col-4>
+                <h2>Name</h2>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item *ngFor="let val of data; let i = index;">
+            <ion-row>
+              <ion-col col-4 text-center text-wrap>
+                <h3>{{i + 1}}</h3>
+              </ion-col>
+              <ion-col col-4 text-center text-wrap>
+                <h3>{{val.rollNo}}</h3>
+              </ion-col>
+              <ion-col col-4 text-center text-wrap>
+                <h3>{{val.fname}} {{val.lname}}</h3>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

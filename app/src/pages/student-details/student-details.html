@@ -1,0 +1,68 @@
+<ion-header>
+
+  <ion-navbar color="primary" text-center hideBackButton="true">
+    <ion-title>Past Attendance</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" pickerFormat="DD-MM-YYYY" [(ngModel)]="date"></ion-datetime>
+    </ion-item>
+    <ion-item no-lines>
+      <button ion-button full large color="secondary" (click)="check();">
+        <ion-icon name="check"></ion-icon> Check
+      </button>
+    </ion-item>
+    <ion-item no-lines *ngIf="roomNo">
+      <ion-label>Select Room Number</ion-label>
+      <ion-select okText="Okay!" #R (ionChange)="onChange(R.value, 'roomNo')">
+        <ion-option *ngFor="let val of roomNo" value="{{val}}">{{val}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item no-lines *ngIf="subject">
+      <ion-label>Select Subject</ion-label>
+      <ion-select okText="Okay!" #S (ionChange)="onChange(S.value, 'subject')">
+        <ion-option *ngFor="let val of subject" value="{{val}}">{{val}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="filteredData">
+      <ion-card>
+        <ion-grid>
+          <ion-item>
+            <ion-row>
+              <ion-col col-4>
+                <h2>Sr No.</h2>
+              </ion-col>
+              <ion-col col-4>
+                <h2>Roll No.</h2>
+              </ion-col>
+              <ion-col col-4>
+                <h2>Name</h2>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item *ngFor="let val of filteredData; let i = index;">
+            <ion-row>
+              <ion-col col-4 text-center text-wrap>
+                <h3>{{i + 1}}</h3>
+              </ion-col>
+              <ion-col col-4 text-center text-wrap>
+                <h3>{{val.rollNo}}</h3>
+              </ion-col>
+              <ion-col col-4 text-center text-wrap>
+                <h3>{{val.fname}} {{val.lname}}</h3>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
