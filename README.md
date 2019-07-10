@@ -20,9 +20,9 @@ I along with my team developed Attendment during 3rd year of Engineering. It is 
 * YOLO Object Detection - _Python_
 	* This module was to capture the number of faces detected in the classroom by camera and cross check with the attendances taken in that lecture. If these two data didn't match then a feedback is sent to teacher about the possibility of proxy of any student in the lecture
 
-## I contributed in developing the mobile applications and certains phases in IOT Hardware Setup
+## I contributed in developing the mobile application and certain phases in IOT Hardware Setup
 
-#### The IEEE Paper for this can be read [here](./IEEE_Paper/1858.pdf)
+### The IEEE Paper for this can be read [here](./IEEE_Paper/1858.pdf)
 
 ## Visit My Portfolio
 [Akash Rajpurohit](https://akashrajpurohit.cf)
